@@ -1,13 +1,14 @@
 package sk.itsovy.projectGLshop;
 
 import sk.itsovy.projectGLshop.bill.Bill;
+import sk.itsovy.projectGLshop.exception.BillException;
 import sk.itsovy.projectGLshop.items.*;
 
 import static sk.itsovy.projectGLshop.items.Category.School;
 
 public class Application {
 
-    public void Example(){
+    public void Example() throws BillException {
 
         Bill bill = new Bill();
 
@@ -23,11 +24,15 @@ public class Application {
         bill.addItem(apple);
         bill.addItem(pencil);
         bill.addItem(kofola);
-        bill.addItem(beer);
 
         bill.removeItem(beer);
 
         int count = bill.getCount();
+        System.out.println(count);
+
+        bill.printAll();
+        System.out.println("\n");
+        System.out.println(bill.getFinalPrice());
 
     }
 

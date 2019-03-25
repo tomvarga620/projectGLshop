@@ -21,11 +21,6 @@ public class Pastry extends Food implements Pc {
     }
 
     @Override
-    public String getName() {
-        return getName();
-    }
-
-    @Override
     public double getTotalPrice() {
         return amount*getPrice();
     }

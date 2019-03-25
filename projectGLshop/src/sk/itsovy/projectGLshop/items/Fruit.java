@@ -19,11 +19,6 @@ public class Fruit extends Food {
         return weight*getPrice();
     }
 
-    @Override
-    public String getName() {
-        return getName();
-    }
-
     public double getWeight() {
         return weight;
     }

@@ -18,6 +18,7 @@ public abstract class Item implements ItemInterface {
     }
 
     public double getPrice() {
+
         return price;
     }
 }

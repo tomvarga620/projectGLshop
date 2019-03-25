@@ -17,11 +17,6 @@ public class Draft extends Drink implements DrafInterface {
     }
 
     @Override
-    public String getName() {
-        return getName();
-    }
-
-    @Override
     public double getVolume() {
         return volume;
     }

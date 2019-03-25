@@ -21,11 +21,6 @@ public class Bottle extends Drink implements Pc {
     }
 
     @Override
-    public String getName() {
-        return getName();
-    }
-
-    @Override
     public int getAmount() {
         return amount;
     }
