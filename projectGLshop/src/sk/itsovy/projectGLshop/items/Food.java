@@ -8,4 +8,5 @@ public abstract class Food extends Item {
         super(name, price);
         this.calories = calories;
     }
+
 }

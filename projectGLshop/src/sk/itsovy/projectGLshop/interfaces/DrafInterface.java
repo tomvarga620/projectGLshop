@@ -1,4 +1,4 @@
-package sk.itsovy.projectGLshop.items;
+package sk.itsovy.projectGLshop.interfaces;
 
 public interface DrafInterface {
 

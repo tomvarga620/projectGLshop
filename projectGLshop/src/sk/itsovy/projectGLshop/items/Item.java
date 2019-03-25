@@ -1,5 +1,7 @@
 package sk.itsovy.projectGLshop.items;
 
+import sk.itsovy.projectGLshop.interfaces.ItemInterface;
+
 public abstract class Item implements ItemInterface {
 
     private String name;

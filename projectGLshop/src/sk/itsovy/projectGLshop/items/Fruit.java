@@ -9,6 +9,11 @@ public class Fruit extends Food {
         this.weight = weight;
     }
 
+    public Fruit(String name, double price, double weight) {
+        this(name,price,-1,weight);
+    }
+
+
     @Override
     public double getTotalPrice() {
         return weight*getPrice();

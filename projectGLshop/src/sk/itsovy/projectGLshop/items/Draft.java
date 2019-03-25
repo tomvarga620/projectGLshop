@@ -1,5 +1,7 @@
 package sk.itsovy.projectGLshop.items;
 
+import sk.itsovy.projectGLshop.interfaces.DrafInterface;
+
 public class Draft extends Drink implements DrafInterface {
 
     private double volume;

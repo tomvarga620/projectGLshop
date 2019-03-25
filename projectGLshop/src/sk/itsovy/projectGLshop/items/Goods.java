@@ -1,5 +1,7 @@
 package sk.itsovy.projectGLshop.items;
 
+import sk.itsovy.projectGLshop.interfaces.Pc;
+
 public class Goods extends Item implements Pc {
 
     private int amount;
