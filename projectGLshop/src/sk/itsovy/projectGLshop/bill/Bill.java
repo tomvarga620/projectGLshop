@@ -8,21 +8,29 @@ import sk.itsovy.projectGLshop.items.Draft;
 import sk.itsovy.projectGLshop.items.Fruit;
 import sk.itsovy.projectGLshop.items.Item;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static sk.itsovy.projectGLshop.main.Globals.MaxItems;
 
-public class Bill extends Application {
+public class Bill {
 
     private List<Item> list;
+    private boolean open;
+    private Date date;
 
     public Bill() {
        this.list = new ArrayList<>();
+       this.open = true;
     }
 
     public void addItem(Item item) throws BillException{
-
+        if(!open){
+            throw new BillException("Cant add more items");
+        }
         list.add(item);
         if(item!=null) {
             if (getCount() == MaxItems ) {
@@ -44,13 +52,7 @@ public class Bill extends Application {
         else
         {
             for(Item item: list){
-                if(item instanceof DrafInterface){
-                    total = total + item.getTotalPrice();
-                }else if(item instanceof Fruit){
-                    total = total + item.getTotalPrice();
-                }else if(item instanceof Pc){
-                    total = total + item.getTotalPrice();
-                }
+                total = total + item.getTotalPrice();
             }
         }
 
@@ -82,5 +84,30 @@ public class Bill extends Application {
                 }
             }
         }
+        if(open == true){
+            System.out.println("Bill is opened,you can add items");
+        }
+        else
+        {
+            System.out.println(dateFormat());
+        }
     }
+
+    public void billEnd(){
+        this.open = false;
+    }
+
+    public String dateFormat(){
+
+        SimpleDateFormat formatter = new SimpleDateFormat("'Datum: 'yyyy.MM.dd 'Cas: 'HH:mm");
+        Date date = new Date(System.currentTimeMillis());
+        //System.out.println(formatter.format(date));
+        return formatter.format(date);
+    }
+
+    /*
+    public double finalPrice(double total){
+        DecimalFormat format = new DecimalFormat("##.00");
+        return format.format(total.);
+    }*/
 }

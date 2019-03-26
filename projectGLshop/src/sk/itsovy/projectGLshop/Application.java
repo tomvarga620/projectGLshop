@@ -8,6 +8,17 @@ import static sk.itsovy.projectGLshop.items.Category.School;
 
 public class Application {
 
+    private static Application app = new Application();
+
+    private Application(){
+
+    }
+
+    public static Application getInstance(){
+
+        return app;
+    }
+
     public void Example() throws BillException {
 
         Bill bill = new Bill();
@@ -29,7 +40,7 @@ public class Application {
 
         int count = bill.getCount();
         System.out.println(count);
-
+        bill.billEnd();
         bill.printAll();
         System.out.println("\n");
         System.out.println(bill.getFinalPrice());
