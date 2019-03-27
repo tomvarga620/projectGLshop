@@ -1,14 +1,12 @@
 package sk.itsovy.projectGLshop.bill;
 
-import sk.itsovy.projectGLshop.Application;
+import sk.itsovy.projectGLshop.Database.Database;
 import sk.itsovy.projectGLshop.exception.BillException;
 import sk.itsovy.projectGLshop.interfaces.DrafInterface;
 import sk.itsovy.projectGLshop.interfaces.Pc;
-import sk.itsovy.projectGLshop.items.Draft;
 import sk.itsovy.projectGLshop.items.Fruit;
 import sk.itsovy.projectGLshop.items.Item;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -95,6 +93,8 @@ public class Bill {
 
     public void billEnd(){
         this.open = false;
+        Database db = Database.getInstance();
+        db.insertNewBill(this);
     }
 
     public String dateFormat(){

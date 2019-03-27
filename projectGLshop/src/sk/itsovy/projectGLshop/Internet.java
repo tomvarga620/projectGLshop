@@ -27,8 +27,11 @@ public class Internet {
             JsonParser jp = new JsonParser();
             JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
             JsonObject jsonobj = root.getAsJsonObject();
+            jsonobj = jsonobj.getAsJsonObject("rates");
 
-            rslt = jsonobj.get("success").getAsString();
+            //System.out.println(jsonobj);
+
+            rslt = jsonobj.get("USD").getAsString();
             System.out.println(rslt);
 
         }catch (Exception e){
