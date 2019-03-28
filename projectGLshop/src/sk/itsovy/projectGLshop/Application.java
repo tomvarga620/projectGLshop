@@ -4,6 +4,8 @@ import sk.itsovy.projectGLshop.bill.Bill;
 import sk.itsovy.projectGLshop.exception.BillException;
 import sk.itsovy.projectGLshop.items.*;
 
+import java.sql.SQLException;
+
 import static sk.itsovy.projectGLshop.items.Category.School;
 
 public class Application {
@@ -18,7 +20,10 @@ public class Application {
         return app;
     }
 
-    public void Example() throws BillException {
+    public void Example() throws BillException, SQLException {
+
+        Internet net = new Internet();
+        net.getRequest();
 
         Bill bill = new Bill();
 
@@ -43,6 +48,7 @@ public class Application {
         bill.printAll();
         System.out.println("\n");
         System.out.println(bill.getFinalPrice());
+        System.out.println(net.getFinalToUSD(bill.getFinalPrice()));
 
     }
 

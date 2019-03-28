@@ -40,5 +40,14 @@ public class Internet {
         return rslt;
     }
 
+    public String getFinalToUSD(double price){
+        //usd rate from request
+        String usdS = getRequest();
+        //usd rate to double
+        double usd = Double.valueOf(usdS);
+        double rslt = price*usd;
+
+        return String.valueOf(rslt);
+    }
 }
 

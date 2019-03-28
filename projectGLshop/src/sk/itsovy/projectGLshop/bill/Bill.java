@@ -7,6 +7,7 @@ import sk.itsovy.projectGLshop.interfaces.Pc;
 import sk.itsovy.projectGLshop.items.Fruit;
 import sk.itsovy.projectGLshop.items.Item;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -91,7 +92,7 @@ public class Bill {
         }
     }
 
-    public void billEnd(){
+    public void billEnd() throws SQLException {
         this.open = false;
         Database db = Database.getInstance();
         db.insertNewBill(this);
