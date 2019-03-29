@@ -1,6 +1,7 @@
 package sk.itsovy.projectGLshop.bill;
 
 import sk.itsovy.projectGLshop.Database.Database;
+import sk.itsovy.projectGLshop.Xml;
 import sk.itsovy.projectGLshop.exception.BillException;
 import sk.itsovy.projectGLshop.interfaces.DrafInterface;
 import sk.itsovy.projectGLshop.interfaces.Pc;
@@ -98,7 +99,9 @@ public class Bill {
             date = new Date();
             System.out.println(date);
             Database db = Database.getInstance();
+            Xml xml = new Xml();
             db.insertNewBill(this);
+            xml.createXML(this);
         }
 
         open=false;
