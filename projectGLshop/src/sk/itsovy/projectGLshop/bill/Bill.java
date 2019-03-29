@@ -19,7 +19,7 @@ public class Bill {
 
     private List<Item> list;
     private boolean open;
-    private Date date;
+    private Date date = new Date(System.currentTimeMillis());
 
     public Bill() {
        this.list = new ArrayList<>();
@@ -83,19 +83,25 @@ public class Bill {
                 }
             }
         }
-        if(open == true){
+        /*if(open == true){
             System.out.println("Bill is opened,you can add items");
         }
         else
         {
             System.out.println(dateFormat());
-        }
+        }*/
     }
 
     public void billEnd() throws SQLException {
-        this.open = false;
-        Database db = Database.getInstance();
-        db.insertNewBill(this);
+
+        if(open) {
+            date = new Date();
+            System.out.println(date);
+            Database db = Database.getInstance();
+            db.insertNewBill(this);
+        }
+
+        open=false;
     }
 
     public String dateFormat(){
@@ -106,9 +112,18 @@ public class Bill {
         return formatter.format(date);
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public List<Item> getList() {
+        return list;
+    }
+
     /*
     public double finalPrice(double total){
         DecimalFormat format = new DecimalFormat("##.00");
         return format.format(total.);
     }*/
+
 }

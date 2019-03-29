@@ -11,7 +11,5 @@ public class Main {
 
         Application app = Application.getInstance();
         app.Example();
-        /*Internet net = new Internet();
-        net.getRequest();*/
     }
 }

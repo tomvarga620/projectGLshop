@@ -1,11 +1,13 @@
 package sk.itsovy.projectGLshop.Database;
 
 import sk.itsovy.projectGLshop.bill.Bill;
+import sk.itsovy.projectGLshop.interfaces.DrafInterface;
+import sk.itsovy.projectGLshop.interfaces.Pc;
+import sk.itsovy.projectGLshop.items.Fruit;
+import sk.itsovy.projectGLshop.items.Item;
 import sk.itsovy.projectGLshop.main.Globals;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Database {
 
@@ -21,47 +23,62 @@ public class Database {
 
     public void insertNewBill(Bill bill) throws SQLException {
         Connection conn = Globals.getConnection();
-        PreparedStatement sqlPreparedStatement = null;
-        PreparedStatement secondSqlStatement = null;
         try {
             //set connection auto commit to false
             conn.setAutoCommit(false);
-
-            sqlPreparedStatement = conn.prepareStatement("INSERT INTO Bill (date,totalPrice,time) VALUES (?,?,?)");
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO Bill (date,totalPrice,time) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
             //set all the values in the prepared statement
-            sqlPreparedStatement.setString(1, "string");
-            sqlPreparedStatement.setString(2, "anotherstring");
-            sqlPreparedStatement.setString(2, "anotherstring");
+            statement.setDate(1, new java.sql.Date(bill.getDate().getTime()));
+            statement.setFloat(2, (float)bill.getFinalPrice());
+            statement.setTime(3,new java.sql.Time(bill.getDate().getTime()));
 
-            sqlPreparedStatement.executeUpdate();
+            int rslt = statement.executeUpdate();
 
-            secondSqlStatement = conn.prepareStatement("INSERT INTO Bill (OrderID,Name,Price,Count,Unit) VALUES (?,?,?,?,?)");
-            //set all the values in the prepared statement
-            secondSqlStatement.setString(1, "whatever");
-            secondSqlStatement.setString(2, "sample");
-            secondSqlStatement.setString(3, "sample");
-            secondSqlStatement.setString(4, "sample");
-            secondSqlStatement.setString(5, "sample");
+            if (rslt == 0){
 
-            secondSqlStatement.executeUpdate();
+                throw new SQLException("Creating user failed, no rows affected.");
 
+            }
+
+            try (ResultSet generatedKeys = statement.getGeneratedKeys()){
+
+                if(generatedKeys.next()) {
+                    //set all the values in the prepared statement
+                    for (Item item : bill.getList()) {
+
+                        PreparedStatement statement2 = conn.prepareStatement("INSERT INTO Item (OrderID,Name,Price,Count,Unit) VALUES (?,?,?,?,?)");
+                        statement2.setDouble(1,generatedKeys.getLong(1));
+                        statement2.setString(2,item.getName());
+                        statement2.setFloat(3,(float)item.getPrice());
+
+                        if (item instanceof DrafInterface) {
+                            statement2.setDouble(4,((DrafInterface) item).getVolume());
+                            statement2.setString(5,"l");
+                        } else if (item instanceof Fruit) {
+                            statement2.setDouble(4,((Fruit) item).getWeight());
+                            statement2.setString(5,"Kg");
+                        } else if (item instanceof Pc) {
+                            statement2.setDouble(4,((Pc) item).getAmount());
+                            statement2.setString(5,"Pcs");
+                        }
+
+                        statement2.executeUpdate();
+                    }
+
+                }
+                else
+                {
+                    throw new SQLException("Creating bill failed, no ID obtained.");
+                }
+            }
             //commit the changes
             conn.commit();
+            conn.close();
+
         } catch (SQLException e) {
-            e.printStackTrace();//or whatever
+            e.printStackTrace();
             //rollback the changes
             conn.rollback();
-        } finally {
-            //close the PreparedStatement and the connection if not null
-            if (sqlPreparedStatement != null) {
-                sqlPreparedStatement.close();
-            }
-            if (secondSqlStatement != null) {
-                secondSqlStatement.close();
-            }
-            if (conn != null) {
-                conn.close();
-            }
         }
 
     }
