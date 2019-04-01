@@ -129,7 +129,7 @@ public class Bill {
     public Item itemValidation(Item item){
         //itemUpdate(item);
         for(Item billitem: list){
-            if(item.getName().toLowerCase() == billitem.getName().toLowerCase() &&
+            if(item.getName().toLowerCase().equals(billitem.getName().toLowerCase()) &&
             item.getClass().getName().equals(billitem.getClass().getName()) ){
                 System.out.println("rovnake");
                 return null;
@@ -138,7 +138,7 @@ public class Bill {
     }
 
     public void itemUpdate(Item item){
-        
+
     }
 
     /*
