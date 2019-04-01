@@ -137,7 +137,20 @@ public class Bill {
         }return item;
     }
 
-    public void itemUpdate(Item item){
+    public void itemUpdate(Item newItem,Item oldItem){
+
+        if(newItem instanceof DrafInterface){
+            double rslt = ((DrafInterface) newItem).getVolume() + ((DrafInterface) oldItem).getVolume();
+            ((DrafInterface) newItem).setVolume(rslt);
+
+        }else if(newItem instanceof Fruit){
+            double rslt = ((Fruit) newItem).getWeight() + ((Fruit) oldItem).getWeight();
+            ((Fruit) newItem).setWeight(rslt);
+
+        }else if(newItem instanceof Pc){
+            int rslt = ((Pc) newItem).getAmount() + ((Pc) oldItem).getAmount();
+            ((Pc) newItem).setAmount(rslt);
+        }
 
     }
 

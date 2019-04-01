@@ -21,4 +21,9 @@ public class Draft extends Drink implements DrafInterface {
         return volume;
     }
 
+    @Override
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
+
 }

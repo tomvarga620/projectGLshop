@@ -21,6 +21,11 @@ public class Sweets extends Food implements Pc {
     }
 
     @Override
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    @Override
     public double getTotalPrice() {
         return amount*getPrice();
     }

@@ -24,4 +24,9 @@ public class Bottle extends Drink implements Pc {
     public int getAmount() {
         return amount;
     }
+
+    @Override
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 }
