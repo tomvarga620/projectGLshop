@@ -28,14 +28,18 @@ public class Bill {
     }
 
     public void addItem(Item item) throws BillException{
-        if(!open){
-            throw new BillException("Cant add more items");
-        }
-        list.add(item);
-        if(item!=null) {
+        Item tempItem = itemValidation(item);
+        if(tempItem==item) {
+            if(!open){
+                throw new BillException("Cant add more items");
+            }
             if (getCount() == MaxItems ) {
                 String message = "Bill is full max number of items is "+MaxItems;
                 throw new BillException(message);
+            }
+            else
+            {
+                list.add(item);
             }
         }
     }
@@ -58,7 +62,6 @@ public class Bill {
 
         return total;
 
-        //throw new UnsupportedOperationException("Method does not exist yet");
     }
 
     public int getCount(){
@@ -121,6 +124,21 @@ public class Bill {
 
     public List<Item> getList() {
         return list;
+    }
+
+    public Item itemValidation(Item item){
+        //itemUpdate(item);
+        for(Item billitem: list){
+            if(item.getName().toLowerCase() == billitem.getName().toLowerCase() &&
+            item.getClass().getName().equals(billitem.getClass().getName()) ){
+                System.out.println("rovnake");
+                return null;
+            }
+        }return item;
+    }
+
+    public void itemUpdate(Item item){
+        
     }
 
     /*

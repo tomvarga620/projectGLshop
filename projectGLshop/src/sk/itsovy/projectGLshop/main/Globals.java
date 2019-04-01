@@ -14,7 +14,7 @@ public class Globals {
     public static final String url = "jdbc:mysql://localhost:3306/GLshop";
 
     static {
-        MaxItems = 7;
+        MaxItems = 8;
     }
 
     public static Connection getConnection(){
