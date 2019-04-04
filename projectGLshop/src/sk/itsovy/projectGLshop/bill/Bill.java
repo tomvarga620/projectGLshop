@@ -1,6 +1,7 @@
 package sk.itsovy.projectGLshop.bill;
 
 import sk.itsovy.projectGLshop.Database.Database;
+import sk.itsovy.projectGLshop.Database.MongoDB;
 import sk.itsovy.projectGLshop.exception.BillException;
 import sk.itsovy.projectGLshop.interfaces.DrafInterface;
 import sk.itsovy.projectGLshop.interfaces.Pc;
@@ -106,8 +107,10 @@ public class Bill {
             date = new Date();
             System.out.println(date);
             Database db = Database.getInstance();
+            MongoDB db2 = MongoDB.getInstance();
            // Xml xml = new Xml();
             db.insertNewBill(this);
+            db2.insertNewBillMongo(this);
             //xml.createXML(this);
         }
 

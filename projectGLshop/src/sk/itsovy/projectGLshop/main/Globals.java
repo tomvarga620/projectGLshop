@@ -13,6 +13,15 @@ public class Globals {
     public static final String port = "3306";
     public static final String url = "jdbc:mysql://localhost:3306/GLshop";
 
+    //mongoDB
+
+    public static final String portMongo = "27017";
+    public static final String hostMongo = "localhost";
+
+    public static final String userMongo= "root";
+    public static final String passMong = "admin";
+    public static final String dbname = "billDB";
+
     static {
         MaxItems = 8;
     }

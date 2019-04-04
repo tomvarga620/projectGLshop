@@ -98,15 +98,6 @@ public class Xml {
             priceDol.appendChild(doc.createTextNode(net.getFinalToUSD(bill.getFinalPrice())));
             totalprice.appendChild(priceDol);
 
-
-          /*  Element eur = doc.createElement("EUR");
-            eur.appendChild(doc.createTextNode(String.valueOf(bill.getFinalPrice())));
-            totalPrice.appendChild(eur);
-
-            Element usd = doc.createElement("USD");
-            usd.appendChild(doc.createTextNode(net.getFinalToUSD(bill.getFinalPrice())));
-            totalPrice.appendChild(usd);*/
-
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);

@@ -4,9 +4,11 @@
     <list default="true" id="69d4564c-d50d-457b-87d4-7d3d090ed0a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bill.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bill.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projectGLshop/sk/itsovy/projectGLshop/Xml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectGLshop/sk/itsovy/projectGLshop/Xml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Xml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,46 +25,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1560">
-              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+            <state relative-caret-position="307">
+              <caret line="112" column="39" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret column="41" selection-start-column="41" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Xml.java">
+        <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+            <state relative-caret-position="756">
+              <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Internet.java">
+        <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Xml.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-87">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="-748">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,20 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="99">
+              <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="280">
+              <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,7 +100,6 @@
       <find>get</find>
       <find>INSERT</find>
       <find>bill</find>
-      <find>date</find>
       <find>b</find>
       <find>count</find>
       <find>database</find>
@@ -135,6 +112,8 @@
       <find>docBuilder</find>
       <find>doc</find>
       <find>price</find>
+      <find>billEnd</find>
+      <find>date</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,11 +158,11 @@
         <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/items/Pastry.java" />
         <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/items/Draft.java" />
         <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/items/Bottle.java" />
-        <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java" />
-        <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java" />
-        <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java" />
         <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Application.java" />
         <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Xml.java" />
+        <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java" />
+        <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java" />
+        <option value="$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java" />
       </list>
     </option>
   </component>
@@ -231,6 +210,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="projectGLshop" type="462c0819:PsiDirectoryNode" />
               <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projectGLshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projectGLshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projectGLshop" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -288,10 +274,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="811" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="811" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37124464" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3762518" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -300,7 +285,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32962447" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32267037" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991655" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -464,16 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -484,42 +459,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret column="41" selection-start-column="41" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Internet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
+        <state relative-caret-position="102">
           <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/main/Globals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -528,10 +491,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Xml.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+        <state relative-caret-position="-748">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/bill/Bill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="112" column="39" selection-start-line="112" selection-start-column="39" selection-end-line="112" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sk/itsovy/projectGLshop/Database/MongoDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
           </folding>
         </state>
       </provider>
