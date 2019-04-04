@@ -18,11 +18,16 @@ import static sk.itsovy.projectGLshop.main.Globals.MaxItems;
 
 public class Bill {
 
+    private int id;
+    private static int count =0;
+
     private List<Item> list;
     private boolean open;
     private Date date = new Date(System.currentTimeMillis());
 
     public Bill() {
+       count++;
+       this.id = count;
        this.list = new ArrayList<>();
        this.open = true;
     }

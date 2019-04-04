@@ -33,7 +33,7 @@ public class Application {
         Item pencil = new Goods("Pencil",2,1,School);
         Item kofola = new Draft("kofola",0.80,true,0.3);
         Item beer = new Bottle("Beer 12%",2,true,1);
-        Item b1 = new Bottle("Beer 12%",2,true,1 );
+        Item b1 = new Bottle("Beer <12%",2,true,1 );
 
         bill.addItem(milk);
         bill.addItem(pizza);
