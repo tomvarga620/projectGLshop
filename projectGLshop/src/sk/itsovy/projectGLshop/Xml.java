@@ -10,9 +10,8 @@ import sk.itsovy.projectGLshop.items.Item;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
@@ -48,67 +47,83 @@ public class Xml {
 
             for (Item billitem : bill.getList()) {
 
-                Element item = doc.createElement("Item");
-                rootItems.appendChild(item);
+                Element mainItem = doc.createElement("Item");
+                rootItems.appendChild(mainItem);
 
                 Element name = doc.createElement("Name");
-                item.appendChild(name);
+                name.appendChild(doc.createTextNode(billitem.getName()));
+                mainItem.appendChild(name);
 
                 Element price = doc.createElement("Price");
-                item.appendChild(price);
+                price.appendChild(doc.createTextNode(String.valueOf(billitem.getPrice())));
+                mainItem.appendChild(price);
 
                 Element amount = doc.createElement("Amount");
 
-                if (item instanceof DrafInterface) {
-                    amount.appendChild(doc.createTextNode(String.valueOf(((DrafInterface) item).getVolume())));
-                    item.appendChild(amount);
-                } else if (item instanceof Fruit) {
-                    amount.appendChild(doc.createTextNode(String.valueOf(((Fruit) item).getWeight())));
-                    item.appendChild(amount);
-                } else if (item instanceof Pc) {
-                    amount.appendChild(doc.createTextNode(String.valueOf(((Pc) item).getAmount())));
-                    item.appendChild(amount);
+                if (billitem instanceof DrafInterface) {
+                    amount.appendChild(doc.createTextNode(String.valueOf(((DrafInterface) billitem).getVolume())));
+                    mainItem.appendChild(amount);
+                } else if (billitem instanceof Fruit) {
+                    amount.appendChild(doc.createTextNode(String.valueOf(((Fruit) billitem).getWeight())));
+                    mainItem.appendChild(amount);
+                } else if (billitem instanceof Pc) {
+                    amount.appendChild(doc.createTextNode(String.valueOf(((Pc) billitem).getAmount())));
+                    mainItem.appendChild(amount);
                 }
 
                 Element unit = doc.createElement("Unit");
 
-                if (item instanceof DrafInterface) {
+                if (billitem instanceof DrafInterface) {
                     unit.appendChild(doc.createTextNode("l"));
-                    item.appendChild(unit);
-                } else if (item instanceof Fruit) {
+                    mainItem.appendChild(unit);
+                } else if (billitem instanceof Fruit) {
                     unit.appendChild(doc.createTextNode("Kg"));
-                    item.appendChild(unit);
-                } else if (item instanceof Pc) {
+                    mainItem.appendChild(unit);
+                } else if (billitem instanceof Pc) {
                     unit.appendChild(doc.createTextNode("Pcs"));
-                    item.appendChild(unit);
+                    mainItem.appendChild(unit);
                 }
 
             }
 
-            Element totalPrice = doc.createElement("PriceOverall");
-            totalPrice.appendChild(rootItems);
 
-            Element eur = doc.createElement("EUR");
+            Element totalprice = doc.createElement("TotalPrice");
+            rootItems.appendChild(totalprice);
+
+            Element priceEur = doc.createElement("EUR");
+            priceEur.appendChild(doc.createTextNode(String.valueOf(bill.getFinalPrice())));
+            totalprice.appendChild(priceEur);
+
+            Element priceDol = doc.createElement("USD");
+            priceDol.appendChild(doc.createTextNode(net.getFinalToUSD(bill.getFinalPrice())));
+            totalprice.appendChild(priceDol);
+
+
+          /*  Element eur = doc.createElement("EUR");
             eur.appendChild(doc.createTextNode(String.valueOf(bill.getFinalPrice())));
             totalPrice.appendChild(eur);
 
             Element usd = doc.createElement("USD");
             usd.appendChild(doc.createTextNode(net.getFinalToUSD(bill.getFinalPrice())));
-            totalPrice.appendChild(usd);
+            totalPrice.appendChild(usd);*/
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File("bill.xml"));
             transformer.transform(source, result);
 
-        } catch (Exception e) {
+            StreamResult consoleResult = new StreamResult(System.out);
+            transformer.transform(source, consoleResult);
+
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
 
-        System.out.println("File saved!");
     }
 
 }

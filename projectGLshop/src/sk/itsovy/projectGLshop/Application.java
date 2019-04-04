@@ -25,6 +25,8 @@ public class Application {
         Internet net = new Internet();
         net.getRequest();
 
+        Xml xml = new Xml();
+
         Bill bill = new Bill();
 
         Bottle milk = new Bottle("Milk 1,5%",0.59,1);
@@ -47,6 +49,7 @@ public class Application {
         System.out.println(count);
         bill.billEnd();
         bill.printAll();
+        xml.createXML(bill);
         System.out.println("\n");
         System.out.println(bill.getFinalPrice());
         System.out.println(net.getFinalToUSD(bill.getFinalPrice()));
