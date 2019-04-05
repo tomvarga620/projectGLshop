@@ -49,7 +49,7 @@ public class Application {
         System.out.println(count);
         bill.billEnd();
         bill.printAll();
-        xml.createXML(bill);
+       //xml.createXML(bill);
         System.out.println("\n");
         System.out.println(bill.getFinalPrice());
         System.out.println(net.getFinalToUSD(bill.getFinalPrice()));

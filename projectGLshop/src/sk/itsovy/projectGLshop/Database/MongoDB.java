@@ -5,8 +5,11 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import sk.itsovy.projectGLshop.bill.Bill;
+import sk.itsovy.projectGLshop.items.Item;
 
+import java.sql.Time;
 import java.util.Date;
 
 import static sk.itsovy.projectGLshop.main.Globals.*;
@@ -66,14 +69,36 @@ public class MongoDB {
     //TODO
     public void insertNewBillMongo(Bill bill){
 
-        MongoCollection<org.bson.Document> billCollection = acessCollection();
+        MongoCollection<Document> billCollection = acessCollection();
 
         System.out.println(billCollection);
 
         Date date = new java.sql.Date(bill.getDate().getTime());
-        Date time = new java.sql.Time(bill.getDate().getTime());
+        Date time = new Time(bill.getDate().getTime());
+
+        //dokumenty pre udaje
+        Document documentBill = new Document();
+        Document documentDate = new Document();
+        Document documentItems = new Document();
+
+        //String title = "test";
+
+        //pridanie datumu a casu do documentDate
+        documentDate.append("PurchaseDate", date);
+        documentDate.append("PurchaseTime",time);
+
+        //pridane dokumentu do documentBill
+        documentBill.append("Date",documentDate);
+
+        for(Item item: bill.getList()){
+            Document documentItem = new Document("name",item.getName());
+            documentItems.append("Item",documentItem);
+        }
+
+        documentBill.append("Items",documentItems);
 
 
+        billCollection.insertOne(documentBill);
 
     }
 
