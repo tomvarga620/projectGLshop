@@ -7,6 +7,9 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import sk.itsovy.projectGLshop.bill.Bill;
+import sk.itsovy.projectGLshop.interfaces.DrafInterface;
+import sk.itsovy.projectGLshop.interfaces.Pc;
+import sk.itsovy.projectGLshop.items.Fruit;
 import sk.itsovy.projectGLshop.items.Item;
 
 import java.sql.Time;
@@ -84,19 +87,30 @@ public class MongoDB {
         //String title = "test";
 
         //pridanie datumu a casu do documentDate
-        documentDate.append("PurchaseDate", date);
-        documentDate.append("PurchaseTime",time);
+        documentDate.append("PurchaseDate", String.valueOf(date));
+        documentDate.append("PurchaseTime",String.valueOf(time));
 
         //pridane dokumentu do documentBill
         documentBill.append("Date",documentDate);
 
         for(Item item: bill.getList()){
             Document documentItem = new Document("name",item.getName());
+
+            documentItem.append("price",item.getPrice());
+            if (item instanceof DrafInterface){
+                documentItem.append("count",((DrafInterface) item).getVolume());
+                documentItem.append("unit","l");
+            }else if(item instanceof Fruit){
+                documentItem.append("count",((Fruit) item).getWeight());
+                documentItem.append("unit","kg");
+            }else if(item instanceof Pc){
+                documentItem.append("count",((Pc) item).getAmount());
+                documentItem.append("unit","pcs");
+            }
             documentItems.append("Item",documentItem);
         }
 
         documentBill.append("Items",documentItems);
-
 
         billCollection.insertOne(documentBill);
 
